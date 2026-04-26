@@ -89,19 +89,19 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
               values="1,1; 0.85,1; 1,1" keyTimes="0;0.5;1"
               calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
               dur="1.8s" repeatCount="indefinite" />
-            <ellipse cx="0" cy="0" rx="16" ry="0.5" fill="none" stroke="#d8cec4" strokeWidth="6">
+            <ellipse cx="0" cy="0" rx="16" ry="0.5" fill="none" stroke="#ece6e0" strokeWidth="6">
               <animate attributeName="ry" values="3; 0.5; 3" keyTimes="0;0.5;1"
                 calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
                 dur="1.8s" repeatCount="indefinite" />
             </ellipse>
           </g>
-          <circle cx="0" cy="0" r="13" fill="#d8cec4" />
+          <circle cx="0" cy="0" r="13" fill="#ece6e0" />
           <g>
             <animateTransform attributeName="transform" type="scale"
               values="1,1; 0.85,1; 1,1" keyTimes="0;0.5;1"
               calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
               dur="1.8s" repeatCount="indefinite" />
-            <ellipse cx="0" cy="0" rx="16" ry="0.5" fill="none" stroke="#d8cec4" strokeWidth="6">
+            <ellipse cx="0" cy="0" rx="16" ry="0.5" fill="none" stroke="#ece6e0" strokeWidth="6">
               <animate attributeName="ry" values="3; 0.5; 3" keyTimes="0;0.5;1"
                 calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
                 dur="1.8s" repeatCount="indefinite" />
