@@ -7,7 +7,7 @@
       <stop offset="100%" stop-color="#475569" />
     </radialGradient>
     <style>
-      @keyframes dim { 0%, 100% { filter: brightness(1); transform: scale(1); } 25% { filter: brightness(0.75); transform: scale(1.2); } }
+      @keyframes dim { 0%, 100% { filter: brightness(1); } 25% { filter: brightness(0.75); } }
       .p0 { animation: dim 1.2s 0s ease-in-out infinite; }
       .p1 { animation: dim 1.2s 0.2s ease-in-out infinite; }
       .p2 { animation: dim 1.2s 0.4s ease-in-out infinite; }
