@@ -28,21 +28,37 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
       if (start === null) start = t;
       const elapsed = (t - start) / 1000;
 
+      const dimBright = 0.72;
+      const maxScale = 1.25;
+
       groups.forEach((g, i) => {
         const local = ((elapsed - i * stagger) % cycle + cycle) % cycle;
         const phase = local / cycle;
 
-        let opacity: number;
-        if (phase < 0.25) {
-          opacity = 1 - 0.25 * (phase / 0.25);
-        } else if (phase < 0.5) {
-          opacity = 0.75 + 0.25 * ((phase - 0.25) / 0.25);
+        let brightness: number;
+        let scale: number;
+
+        if (phase < 0.08) {
+          const t = phase / 0.08;
+          brightness = 1 - (1 - dimBright) * t;
+        } else if (phase < 0.25) {
+          brightness = dimBright;
+        } else if (phase < 0.33) {
+          const t = (phase - 0.25) / 0.08;
+          brightness = dimBright + (1 - dimBright) * t;
         } else {
-          opacity = 1;
+          brightness = 1;
         }
 
-        const scale = 1 + 0.8 * (1 - opacity);
-        g.style.filter = `brightness(${opacity.toFixed(3)})`;
+        if (phase < 0.25) {
+          scale = 1 + (maxScale - 1) * (phase / 0.25);
+        } else if (phase < 0.33) {
+          scale = maxScale - (maxScale - 1) * ((phase - 0.25) / 0.08);
+        } else {
+          scale = 1;
+        }
+
+        g.style.filter = `brightness(${brightness.toFixed(3)})`;
         g.style.transform = `scale(${scale.toFixed(3)})`;
       });
 
