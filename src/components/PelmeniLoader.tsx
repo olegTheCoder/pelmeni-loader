@@ -13,8 +13,8 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
     const svg = containerRef.current;
     if (!svg) return;
 
-    const cycle = 2.4 / speed;
-    const stagger = 0.4 / speed;
+const cycle = 1.2 / speed;
+const stagger = 0.2 / speed;
     const groups: SVGGElement[] = [];
     for (let i = 0; i < 6; i++) {
       const g = svg.querySelector(`[data-p="${i}"]`) as SVGGElement | null;
