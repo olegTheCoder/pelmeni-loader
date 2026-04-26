@@ -41,7 +41,7 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
           opacity = 1;
         }
 
-        const scale = 1 + 0.1 * (1 - opacity);
+        const scale = 1 + 0.8 * (1 - opacity);
         g.style.filter = `brightness(${opacity.toFixed(3)})`;
         g.style.transform = `scale(${scale.toFixed(3)})`;
       });
