@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import type { PelmeniLoaderProps } from '../types';
 import { lighten, darken } from '../utils/color';
 
@@ -7,6 +7,50 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
   color = '#64748b',
   speed = 1,
 }) => {
+  const containerRef = useRef<SVGSVGElement>(null);
+
+  useEffect(() => {
+    const svg = containerRef.current;
+    if (!svg) return;
+
+    const cycle = 2.4 / speed;
+    const stagger = 0.4 / speed;
+    const groups: SVGGElement[] = [];
+    for (let i = 0; i < 6; i++) {
+      const g = svg.querySelector(`[data-p="${i}"]`) as SVGGElement | null;
+      if (g) groups.push(g);
+    }
+
+    let start: number | null = null;
+    let rafId: number;
+
+    function animate(t: number) {
+      if (start === null) start = t;
+      const elapsed = (t - start) / 1000;
+
+      groups.forEach((g, i) => {
+        const local = ((elapsed - i * stagger) % cycle + cycle) % cycle;
+        const phase = local / cycle;
+
+        let opacity: number;
+        if (phase < 0.25) {
+          opacity = 1 - 0.4 * (phase / 0.25);
+        } else if (phase < 0.5) {
+          opacity = 0.6 + 0.4 * ((phase - 0.25) / 0.25);
+        } else {
+          opacity = 1;
+        }
+
+        g.setAttribute('opacity', opacity.toFixed(3));
+      });
+
+      rafId = requestAnimationFrame(animate);
+    }
+
+    rafId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(rafId);
+  }, [speed]);
+
   const potBody = color;
   const rimLight = lighten(color, 0.4);
   const rimDark = darken(color, 0.15);
@@ -15,10 +59,10 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
   const gradMid = lighten(color, 0.15);
   const gradBottom = darken(color, 0.3);
   const shadowColor = darken(color, 0.75);
-  const dur = 2.4 / speed;
 
   return (
     <svg
+      ref={containerRef}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="-50 -30 300 260"
       width={size}
@@ -27,18 +71,6 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
       style={{ display: 'block' }}
     >
       <defs>
-        <style>{`
-          @keyframes pelmen-pulse {
-            0%, 100% { opacity: 1; }
-            25% { opacity: 0.6; }
-          }
-          .p0 { animation: pelmen-pulse ${dur}s 0s ease-in-out infinite; }
-          .p1 { animation: pelmen-pulse ${dur}s ${0.4 / speed}s ease-in-out infinite; }
-          .p2 { animation: pelmen-pulse ${dur}s ${0.8 / speed}s ease-in-out infinite; }
-          .p3 { animation: pelmen-pulse ${dur}s ${1.2 / speed}s ease-in-out infinite; }
-          .p4 { animation: pelmen-pulse ${dur}s ${1.6 / speed}s ease-in-out infinite; }
-          .p5 { animation: pelmen-pulse ${dur}s ${2.0 / speed}s ease-in-out infinite; }
-        `}</style>
         <radialGradient id={`potBottom-${potBody.replace('#', '')}`} cx="50%" cy="50%" r="50%">
           <stop offset="0%" stopColor={gradTop} />
           <stop offset="65%" stopColor={gradMid} />
@@ -52,7 +84,6 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
 
         <g id="pelmen">
           <ellipse cx="0" cy="8" rx="14" ry="10" fill={shadowColor} opacity="0.3" />
-
           <g>
             <animateTransform attributeName="transform" type="scale"
               values="1,1; 0.85,1; 1,1" keyTimes="0;0.5;1"
@@ -64,9 +95,7 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
                 dur="1.8s" repeatCount="indefinite" />
             </ellipse>
           </g>
-
           <circle cx="0" cy="0" r="13" fill="#d8cec4" />
-
           <g>
             <animateTransform attributeName="transform" type="scale"
               values="1,1; 0.85,1; 1,1" keyTimes="0;0.5;1"
@@ -96,7 +125,7 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
         <animate attributeName="r" values="20; 80" dur="2.5s" begin="1s" repeatCount="indefinite" />
       </circle>
 
-      <g className="p0">
+      <g data-p="0">
         <animateTransform attributeName="transform" type="translate" values="0,0; -1.5,1; 1,-1.5; 0,0" dur="1.1s" repeatCount="indefinite" />
         <g transform="translate(100, 43)">
           <g>
@@ -106,7 +135,7 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
         </g>
       </g>
 
-      <g className="p1">
+      <g data-p="1">
         <animateTransform attributeName="transform" type="translate" values="0,0; 1,-1; -1.5,1; 0,0" dur="1.3s" repeatCount="indefinite" />
         <g transform="translate(148, 70)">
           <g>
@@ -116,7 +145,7 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
         </g>
       </g>
 
-      <g className="p2">
+      <g data-p="2">
         <animateTransform attributeName="transform" type="translate" values="0,0; -2,-1; 1,1.5; 0,0" dur="1.2s" repeatCount="indefinite" />
         <g transform="translate(148, 130)">
           <g>
@@ -126,7 +155,7 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
         </g>
       </g>
 
-      <g className="p3">
+      <g data-p="3">
         <animateTransform attributeName="transform" type="translate" values="0,0; 1,-2; -2,1; 0,0" dur="1.4s" repeatCount="indefinite" />
         <g transform="translate(100, 157)">
           <g>
@@ -136,7 +165,7 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
         </g>
       </g>
 
-      <g className="p4">
+      <g data-p="4">
         <animateTransform attributeName="transform" type="translate" values="0,0; 1.5,1; -1,-1.5; 0,0" dur="1.0s" repeatCount="indefinite" />
         <g transform="translate(52, 130)">
           <g>
@@ -146,7 +175,7 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
         </g>
       </g>
 
-      <g className="p5">
+      <g data-p="5">
         <animateTransform attributeName="transform" type="translate" values="0,0; -1,1.5; 1.5,-1; 0,0" dur="1.5s" repeatCount="indefinite" />
         <g transform="translate(52, 70)">
           <g>
