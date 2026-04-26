@@ -34,9 +34,9 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
 
         let opacity: number;
         if (phase < 0.25) {
-          opacity = 1 - 0.65 * (phase / 0.25);
+          opacity = 1 - 0.25 * (phase / 0.25);
         } else if (phase < 0.5) {
-          opacity = 0.35 + 0.65 * ((phase - 0.25) / 0.25);
+          opacity = 0.75 + 0.25 * ((phase - 0.25) / 0.25);
         } else {
           opacity = 1;
         }
