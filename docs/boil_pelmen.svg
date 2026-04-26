@@ -1,5 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -30 300 260">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -30 300 260" style="overflow: visible; max-height: none; width: 300px; height: 260px;">
   <defs>
+    <style>
+      svg { overflow: visible !important; max-height: none !important; }
+    </style>
     <radialGradient id="potBottom" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#e2e8f0" />
       <stop offset="65%" stop-color="#94a3b8" />
