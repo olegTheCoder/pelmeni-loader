@@ -41,7 +41,7 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
           opacity = 1;
         }
 
-        g.setAttribute('opacity', opacity.toFixed(3));
+        g.style.filter = `brightness(${opacity.toFixed(3)})`;
       });
 
       rafId = requestAnimationFrame(animate);
