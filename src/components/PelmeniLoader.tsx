@@ -13,11 +13,11 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
     const svg = containerRef.current;
     if (!svg) return;
 
-const cycle = 1.2 / speed;
-const stagger = 0.2 / speed;
+    const cycle = 1.2 / speed;
+    const stagger = 0.2 / speed;
     const groups: SVGGElement[] = [];
     for (let i = 0; i < 6; i++) {
-      const g = svg.querySelector(`[data-p="${i}"]`) as SVGGElement | null;
+      const g = svg.querySelector(`[data-s="${i}"]`) as SVGGElement | null;
       if (g) groups.push(g);
     }
 
@@ -41,7 +41,9 @@ const stagger = 0.2 / speed;
           opacity = 1;
         }
 
+        const scale = 1 + 0.1 * (1 - opacity);
         g.style.filter = `brightness(${opacity.toFixed(3)})`;
+        g.style.transform = `scale(${scale.toFixed(3)})`;
       });
 
       rafId = requestAnimationFrame(animate);
@@ -125,62 +127,74 @@ const stagger = 0.2 / speed;
         <animate attributeName="r" values="20; 80" dur="2.5s" begin="1s" repeatCount="indefinite" />
       </circle>
 
-      <g data-p="0">
+      <g>
         <animateTransform attributeName="transform" type="translate" values="0,0; -1.5,1; 1,-1.5; 0,0" dur="1.1s" repeatCount="indefinite" />
         <g transform="translate(100, 43)">
-          <g>
-            <animateTransform attributeName="transform" type="rotate" values="-10; 10; -10" dur="2.5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
-            <use href="#pelmen" transform="rotate(15)" />
+          <g data-s="0">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" values="-10; 10; -10" dur="2.5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
+              <use href="#pelmen" transform="rotate(15)" />
+            </g>
           </g>
         </g>
       </g>
 
-      <g data-p="1">
+      <g>
         <animateTransform attributeName="transform" type="translate" values="0,0; 1,-1; -1.5,1; 0,0" dur="1.3s" repeatCount="indefinite" />
         <g transform="translate(148, 70)">
-          <g>
-            <animateTransform attributeName="transform" type="rotate" values="-12; 8; -12" dur="3s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
-            <use href="#pelmen" transform="rotate(85)" />
+          <g data-s="1">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" values="-12; 8; -12" dur="3s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
+              <use href="#pelmen" transform="rotate(85)" />
+            </g>
           </g>
         </g>
       </g>
 
-      <g data-p="2">
+      <g>
         <animateTransform attributeName="transform" type="translate" values="0,0; -2,-1; 1,1.5; 0,0" dur="1.2s" repeatCount="indefinite" />
         <g transform="translate(148, 130)">
-          <g>
-            <animateTransform attributeName="transform" type="rotate" values="-8; 12; -8" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
-            <use href="#pelmen" transform="rotate(145)" />
+          <g data-s="2">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" values="-8; 12; -8" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
+              <use href="#pelmen" transform="rotate(145)" />
+            </g>
           </g>
         </g>
       </g>
 
-      <g data-p="3">
+      <g>
         <animateTransform attributeName="transform" type="translate" values="0,0; 1,-2; -2,1; 0,0" dur="1.4s" repeatCount="indefinite" />
         <g transform="translate(100, 157)">
-          <g>
-            <animateTransform attributeName="transform" type="rotate" values="-15; 10; -15" dur="2.2s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
-            <use href="#pelmen" transform="rotate(210)" />
+          <g data-s="3">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" values="-15; 10; -15" dur="2.2s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
+              <use href="#pelmen" transform="rotate(210)" />
+            </g>
           </g>
         </g>
       </g>
 
-      <g data-p="4">
+      <g>
         <animateTransform attributeName="transform" type="translate" values="0,0; 1.5,1; -1,-1.5; 0,0" dur="1.0s" repeatCount="indefinite" />
         <g transform="translate(52, 130)">
-          <g>
-            <animateTransform attributeName="transform" type="rotate" values="-7; 13; -7" dur="2.4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
-            <use href="#pelmen" transform="rotate(-65)" />
+          <g data-s="4">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" values="-7; 13; -7" dur="2.4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
+              <use href="#pelmen" transform="rotate(-65)" />
+            </g>
           </g>
         </g>
       </g>
 
-      <g data-p="5">
+      <g>
         <animateTransform attributeName="transform" type="translate" values="0,0; -1,1.5; 1.5,-1; 0,0" dur="1.5s" repeatCount="indefinite" />
         <g transform="translate(52, 70)">
-          <g>
-            <animateTransform attributeName="transform" type="rotate" values="-10; 14; -10" dur="2.9s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
-            <use href="#pelmen" transform="rotate(-15)" />
+          <g data-s="5">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" values="-10; 14; -10" dur="2.9s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
+              <use href="#pelmen" transform="rotate(-15)" />
+            </g>
           </g>
         </g>
       </g>
