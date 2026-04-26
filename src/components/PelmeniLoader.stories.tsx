@@ -17,6 +17,9 @@ const meta: Meta<typeof PelmeniLoader> = {
     speed: {
       control: { type: 'range', min: 0.1, max: 4, step: 0.1 },
     },
+    dimAmount: {
+      control: { type: 'range', min: 0, max: 1, step: 0.05 },
+    },
   },
 };
 
@@ -69,4 +72,16 @@ export const TripleSpeed: Story = {
 
 export const Combined: Story = {
   args: { size: 150, color: '#e74c3c', speed: 0.7 },
+};
+
+export const StrongDim: Story = {
+  args: { dimAmount: 0.4 },
+};
+
+export const WeakDim: Story = {
+  args: { dimAmount: 0.9 },
+};
+
+export const NoDim: Story = {
+  args: { dimAmount: 1 },
 };

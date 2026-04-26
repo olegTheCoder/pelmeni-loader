@@ -29,6 +29,7 @@ function App() {
 | `size`  | `number` | `200`        | Width and height in pixels |
 | `color` | `string` | `'#64748b'`  | Pot color (any hex color)  |
 | `speed` | `number` | `1`          | Animation speed multiplier |
+| `dimAmount` | `number` | `0.72`    | Dim level when pelmeni darken (0=full dim, 1=no dim) |
 
 ## Examples
 
