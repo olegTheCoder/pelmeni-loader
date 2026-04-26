@@ -11,6 +11,12 @@ const config: StorybookConfig = {
     "@storybook/addon-docs",
     "@storybook/addon-onboarding"
   ],
-  "framework": "@storybook/react-vite"
+  "framework": {
+    "name": "@storybook/react-vite",
+    "options": {}
+  },
+  "viteConfig": {
+    "base": "/pelmeni-loader/"
+  }
 };
 export default config;
