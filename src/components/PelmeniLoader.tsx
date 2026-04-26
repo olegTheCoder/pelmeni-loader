@@ -82,7 +82,7 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
     <svg
       ref={containerRef}
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="-50 -30 300 260"
+      viewBox="-50 -40 300 300"
       width={size}
       height={size}
       preserveAspectRatio="xMidYMid meet"
