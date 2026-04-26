@@ -76,8 +76,6 @@ npm run dev
 
 <img src="https://raw.githubusercontent.com/olegTheCoder/pelmeni-loader/main/docs/pelmen_inspiration.gif" width="320" alt="Inspiration - boiling pelmeni" />
 
-This animation was inspired by a [boiling pelmeni video](https://www.youtube.com/watch?v=mN4IojO1YxQ).
-
 ## License
 
 MIT
