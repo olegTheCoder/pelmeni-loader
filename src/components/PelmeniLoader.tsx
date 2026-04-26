@@ -6,7 +6,7 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
   size = 200,
   color = '#64748b',
   speed = 1,
-  dimAmount = 0.72,
+  dimStrength = 0.28,
 }) => {
   const containerRef = useRef<SVGSVGElement>(null);
 
@@ -29,7 +29,7 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
       if (start === null) start = t;
       const elapsed = (t - start) / 1000;
 
-      const dimBright = dimAmount;
+      const dimBright = 1 - dimStrength;
       const maxScale = 1.25;
 
       groups.forEach((g, i) => {
@@ -68,7 +68,7 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
 
     rafId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(rafId);
-  }, [speed, dimAmount]);
+  }, [speed, dimStrength]);
 
   const potBody = color;
   const rimLight = lighten(color, 0.4);

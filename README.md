@@ -29,7 +29,7 @@ function App() {
 | `size`  | `number` | `200`        | Width and height in pixels |
 | `color` | `string` | `'#64748b'`  | Pot color (any hex color)  |
 | `speed` | `number` | `1`          | Animation speed multiplier |
-| `dimAmount` | `number` | `0.72`    | Dim level when pelmeni darken (0=full dim, 1=no dim) |
+| `dimStrength` | `number` | `0.28`     | How much pelmeni darken (0=no dim, 0.28=default, 1=fully dark) |
 
 ## Examples
 
@@ -56,6 +56,15 @@ function App() {
 <PelmeniLoader speed={1} />    {/* normal speed */}
 <PelmeniLoader speed={2} />    {/* double speed */}
 <PelmeniLoader speed={3} />    {/* triple speed */}
+```
+
+### Different dimming
+
+```tsx
+<PelmeniLoader dimStrength={0} />     {/* no dimming */}
+<PelmeniLoader dimStrength={0.28} />  {/* default dimming */}
+<PelmeniLoader dimStrength={0.6} />   {/* strong dimming */}
+<PelmeniLoader dimStrength={1} />     {/* fully dark */}
 ```
 
 ### Combined
