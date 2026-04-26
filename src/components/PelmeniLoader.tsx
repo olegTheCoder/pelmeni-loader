@@ -99,6 +99,7 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
       </circle>
 
       <g>
+        <animate attributeName="opacity" values="1; 0.35; 1" keyTimes="0; 0.25; 0.5" dur="2.4s" begin="0s" repeatCount="indefinite" />
         <animateTransform attributeName="transform" type="translate" values="0,0; -1.5,1; 1,-1.5; 0,0" dur="1.1s" repeatCount="indefinite" />
         <g transform="translate(100, 43)">
           <g>
@@ -109,6 +110,7 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
       </g>
 
       <g>
+        <animate attributeName="opacity" values="1; 0.35; 1" keyTimes="0; 0.25; 0.5" dur="2.4s" begin="0.4s" repeatCount="indefinite" />
         <animateTransform attributeName="transform" type="translate" values="0,0; 1,-1; -1.5,1; 0,0" dur="1.3s" repeatCount="indefinite" />
         <g transform="translate(148, 70)">
           <g>
@@ -119,6 +121,7 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
       </g>
 
       <g>
+        <animate attributeName="opacity" values="1; 0.35; 1" keyTimes="0; 0.25; 0.5" dur="2.4s" begin="0.8s" repeatCount="indefinite" />
         <animateTransform attributeName="transform" type="translate" values="0,0; -2,-1; 1,1.5; 0,0" dur="1.2s" repeatCount="indefinite" />
         <g transform="translate(148, 130)">
           <g>
@@ -129,6 +132,7 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
       </g>
 
       <g>
+        <animate attributeName="opacity" values="1; 0.35; 1" keyTimes="0; 0.25; 0.5" dur="2.4s" begin="1.2s" repeatCount="indefinite" />
         <animateTransform attributeName="transform" type="translate" values="0,0; 1,-2; -2,1; 0,0" dur="1.4s" repeatCount="indefinite" />
         <g transform="translate(100, 157)">
           <g>
@@ -139,6 +143,7 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
       </g>
 
       <g>
+        <animate attributeName="opacity" values="1; 0.35; 1" keyTimes="0; 0.25; 0.5" dur="2.4s" begin="1.6s" repeatCount="indefinite" />
         <animateTransform attributeName="transform" type="translate" values="0,0; 1.5,1; -1,-1.5; 0,0" dur="1.0s" repeatCount="indefinite" />
         <g transform="translate(52, 130)">
           <g>
@@ -149,6 +154,7 @@ export const PelmeniLoader: React.FC<PelmeniLoaderProps> = ({
       </g>
 
       <g>
+        <animate attributeName="opacity" values="1; 0.35; 1" keyTimes="0; 0.25; 0.5" dur="2.4s" begin="2.0s" repeatCount="indefinite" />
         <animateTransform attributeName="transform" type="translate" values="0,0; -1,1.5; 1.5,-1; 0,0" dur="1.5s" repeatCount="indefinite" />
         <g transform="translate(52, 70)">
           <g>
