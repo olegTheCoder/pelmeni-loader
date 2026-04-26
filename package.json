@@ -1,0 +1,56 @@
+{
+  "name": "pelmeni-loader",
+  "version": "1.0.0",
+  "description": "A unique SVG loading animation featuring boiling pelmeni in a pot",
+  "type": "module",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --emitDeclarationOnly && vite build",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "loader",
+    "spinner",
+    "loading",
+    "svg",
+    "animation",
+    "pelmeni",
+    "dumpling"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olegTheCoder/pelmeni-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/olegTheCoder/pelmeni-loader/issues"
+  },
+  "homepage": "https://github.com/olegTheCoder/pelmeni-loader#readme",
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.2"
+  }
+}
