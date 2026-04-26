@@ -5,7 +5,7 @@ A unique React SVG loading animation featuring boiling pelmeni in a pot. Customi
 [![Storybook](https://img.shields.io/badge/Storybook-Playground-ff4785?logo=storybook)](https://olegthecoder.github.io/pelmeni-loader)
 
 <picture>
-  <img src="https://raw.githubusercontent.com/olegTheCoder/pelmeni-loader/main/docs/boil_pelmen.svg" alt="Pelmeni Loader animation" style="max-width: 300px; width: 100%; height: auto; display: block; margin: 0 auto;">
+  <img src="https://raw.githubusercontent.com/olegTheCoder/pelmeni-loader/c78fc31/docs/boil_pelmen.svg" alt="Pelmeni Loader animation" style="max-width: 300px; width: 100%; height: auto; display: block; margin: 0 auto;">
 </picture>
 
 ## Install
