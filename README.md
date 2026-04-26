@@ -2,7 +2,7 @@
 
 A unique React SVG loading animation featuring boiling pelmeni in a pot. Customize size, color, and speed.
 
-<img src="https://raw.githubusercontent.com/olegTheCoder/pelmeni-loader/main/docs/boil_pelmen.svg" width="200" height="200" alt="Pelmeni Loader animation">
+<img src="https://raw.githubusercontent.com/olegTheCoder/pelmeni-loader/main/docs/boil_pelmen.svg" alt="Pelmeni Loader animation" style="width: 100%; display: block;">
 
 ## Install
 
