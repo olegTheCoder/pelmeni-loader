@@ -6,15 +6,7 @@
       <stop offset="65%" stop-color="#94a3b8" />
       <stop offset="100%" stop-color="#475569" />
     </radialGradient>
-    <style>
-      @keyframes dim { 0%, 100% { filter: brightness(1); } 25% { filter: brightness(0.75); } }
-      .p0 { animation: dim 1.2s 0s ease-in-out infinite; }
-      .p1 { animation: dim 1.2s 0.2s ease-in-out infinite; }
-      .p2 { animation: dim 1.2s 0.4s ease-in-out infinite; }
-      .p3 { animation: dim 1.2s 0.6s ease-in-out infinite; }
-      .p4 { animation: dim 1.2s 0.8s ease-in-out infinite; }
-      .p5 { animation: dim 1.2s 1.0s ease-in-out infinite; }
-    </style>
+
     <!-- Градиент ободка кастрюли -->
     <linearGradient id="potRim" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#cbd5e1"/>
