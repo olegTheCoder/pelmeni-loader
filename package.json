@@ -1,5 +1,5 @@
 {
-  "name": "pelmeni-loader",
+  "name": "@olegthecoder/pelmeni-loader",
   "version": "1.0.0",
   "description": "A unique SVG loading animation featuring boiling pelmeni in a pot",
   "type": "module",
@@ -31,6 +31,9 @@
     "pelmeni",
     "dumpling"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",

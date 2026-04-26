@@ -1,5 +1,5 @@
 import React from 'react';
-import { PelmeniLoader } from 'pelmeni-loader';
+import { PelmeniLoader } from '@olegthecoder/pelmeni-loader';
 
 const section: React.CSSProperties = {
   padding: '40px 20px',

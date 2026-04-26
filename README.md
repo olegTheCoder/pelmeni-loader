@@ -7,13 +7,13 @@ A unique React SVG loading animation featuring boiling pelmeni in a pot. Customi
 ## Install
 
 ```bash
-npm install pelmeni-loader
+npm install @olegthecoder/pelmeni-loader
 ```
 
 ## Usage
 
 ```tsx
-import { PelmeniLoader } from 'pelmeni-loader';
+import { PelmeniLoader } from '@olegthecoder/pelmeni-loader';
 
 function App() {
   return <PelmeniLoader />;
