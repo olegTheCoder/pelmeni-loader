@@ -1,2 +1,3 @@
 export { PelmeniLoader } from './components/PelmeniLoader';
-export type { PelmeniLoaderProps } from './types';
+export { PelmeniForkLoader } from './components/PelmeniForkLoader';
+export type { PelmeniLoaderProps, PelmeniForkLoaderProps } from './types';
