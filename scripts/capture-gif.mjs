@@ -69,6 +69,6 @@ for (let i = 0; i < frames; i++) {
 
 await browser.close();
 
-execSync(`ffmpeg -y -framerate 10 -i ${dir}/frame%03d.png -filter_complex "[0:v]split[s0][s1];[s0]palettegen=stats_mode=single[p];[s1][p]paletteuse=new=1" -loop 0 docs/pelmeni-fork-loader.gif`, { stdio: 'inherit' });
+execSync(`ffmpeg -y -framerate 10 -i ${dir}/frame%03d.png -filter_complex "[0:v]crop=390:400:55:45,split[s0][s1];[s0]palettegen=stats_mode=single[p];[s1][p]paletteuse=new=1" -loop 0 docs/pelmeni-fork-loader.gif`, { stdio: 'inherit' });
 rmSync(dir, { recursive: true, force: true });
 console.log('GIF created: docs/pelmeni-fork-loader.gif');
