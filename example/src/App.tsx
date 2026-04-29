@@ -1,5 +1,5 @@
 import React from 'react';
-import { PelmeniLoader } from '@olegthecoder/pelmeni-loader';
+import { PelmeniLoader, PelmeniForkLoader } from '@olegthecoder/pelmeni-loader';
 
 const section: React.CSSProperties = {
   padding: '40px 20px',
@@ -48,13 +48,13 @@ export function App() {
       <section style={section}>
         <h1 style={heading}>🥟 Pelmeni Loader</h1>
         <p style={subtext}>
-          A unique SVG loading animation featuring boiling pelmeni in a pot.
+          A collection of React SVG loading animations featuring russian dumplings.
           Customize size, color, and speed via props.
         </p>
       </section>
 
       <section style={{ ...section, background: '#16213e' }}>
-        <h2 style={heading}>Different sizes</h2>
+        <h2 style={heading}>PelmeniLoader — sizes</h2>
         <div style={grid}>
           <div style={card}>
             <PelmeniLoader size={80} />
@@ -141,6 +141,102 @@ export function App() {
           <div style={card}>
             <PelmeniLoader size={180} color="#3498db" speed={0.3} />
             <span style={label}>blue + very slow</span>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ ...section, background: '#16213e' }}>
+        <h2 style={heading}>PelmeniForkLoader — sizes</h2>
+        <div style={grid}>
+          <div style={card}>
+            <PelmeniForkLoader size={100} />
+            <span style={label}>size=100</span>
+          </div>
+          <div style={card}>
+            <PelmeniForkLoader size={180} />
+            <span style={label}>size=180 (default)</span>
+          </div>
+          <div style={card}>
+            <PelmeniForkLoader size={260} />
+            <span style={label}>size=260</span>
+          </div>
+          <div style={card}>
+            <PelmeniForkLoader size={340} />
+            <span style={label}>size=340</span>
+          </div>
+        </div>
+      </section>
+
+      <section style={section}>
+        <h2 style={heading}>PelmeniForkLoader — accent colors</h2>
+        <div style={grid}>
+          <div style={card}>
+            <PelmeniForkLoader size={140} accent="#1e3799" />
+            <span style={label}>blue (default)</span>
+          </div>
+          <div style={card}>
+            <PelmeniForkLoader size={140} accent="#e74c3c" />
+            <span style={label}>red</span>
+          </div>
+          <div style={card}>
+            <PelmeniForkLoader size={140} accent="#2ecc71" />
+            <span style={label}>green</span>
+          </div>
+          <div style={card}>
+            <PelmeniForkLoader size={140} accent="#f39c12" />
+            <span style={label}>orange</span>
+          </div>
+          <div style={card}>
+            <PelmeniForkLoader size={140} accent="#9b59b6" />
+            <span style={label}>purple</span>
+          </div>
+          <div style={card}>
+            <PelmeniForkLoader size={140} accent="#c44569" />
+            <span style={label}>pink</span>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ ...section, background: '#16213e' }}>
+        <h2 style={heading}>PelmeniForkLoader — color schemes</h2>
+        <div style={grid}>
+          <div style={card}>
+            <PelmeniForkLoader size={150} accent="#e74c3c" plateColor="#fff5e6" pelmeniColor="#f5cba7" backgroundColor="#fdf2e9" />
+            <span style={label}>warm</span>
+          </div>
+          <div style={card}>
+            <PelmeniForkLoader size={150} accent="#bb86fc" plateColor="#2d2d2d" pelmeniColor="#4a4a4a" backgroundColor="#1a1a1a" />
+            <span style={label}>dark</span>
+          </div>
+          <div style={card}>
+            <PelmeniForkLoader size={150} accent="#2d6a4f" plateColor="#f0f7f4" pelmeniColor="#b7b7a4" backgroundColor="#e9ece9" />
+            <span style={label}>nature</span>
+          </div>
+          <div style={card}>
+            <PelmeniForkLoader size={150} accent="#0a4c7f" plateColor="#e8f4f8" pelmeniColor="#a8d0e6" backgroundColor="#d4e6f1" />
+            <span style={label}>ocean</span>
+          </div>
+        </div>
+      </section>
+
+      <section style={section}>
+        <h2 style={heading}>PelmeniForkLoader — speeds</h2>
+        <div style={grid}>
+          <div style={card}>
+            <PelmeniForkLoader size={160} speed={0.5} />
+            <span style={label}>speed=0.5</span>
+          </div>
+          <div style={card}>
+            <PelmeniForkLoader size={160} speed={1} />
+            <span style={label}>speed=1 (default)</span>
+          </div>
+          <div style={card}>
+            <PelmeniForkLoader size={160} speed={2} />
+            <span style={label}>speed=2</span>
+          </div>
+          <div style={card}>
+            <PelmeniForkLoader size={160} speed={3} />
+            <span style={label}>speed=3</span>
           </div>
         </div>
       </section>
